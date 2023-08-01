@@ -1,0 +1,11 @@
+CURSO BANCO UNION
+// MODULO 1
+-> ejecutar
+mvn compile quarkus:dev
+./mvnw compile quarkus:dev
+
+SHOP
+mvn quarkus:add-extension -Dextension="rest-client"
+mvn quarkus:add-extension -Dextension="rest-client-jackson"
+
+-- mañana monitoreo
