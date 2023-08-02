@@ -15,3 +15,8 @@ cd car
 mvn compile quarkus:dev
 cd shop
 mvn compile quarkus:dev -Ddebug=5006
+
+agregar extension
+
+en SHOP
+mvn quarkus:add-extension -Dextension="smallrye-opentracing"
