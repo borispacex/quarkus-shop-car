@@ -14,9 +14,9 @@ import jakarta.ws.rs.core.MediaType;
 @Path("/cars")
 @Produces(MediaType.APPLICATION_JSON)
 //@RegisterRestClient(baseUri = "http://localhost:8080/")
-@RegisterRestClient
+@RegisterRestClient(baseUri = "stork://car-service")
 public interface CarProxy {
-    
+
     @GET
     @Path("shop/{idShop}")
     List<Car> getCarsByShopId(@PathParam("idShop") Long idShop);

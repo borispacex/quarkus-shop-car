@@ -20,3 +20,38 @@ agregar extension
 
 en SHOP
 mvn quarkus:add-extension -Dextension="smallrye-opentracing"
+
+////////////// clase8
+docker run --name consul -d -p 8500:8500 -p 8501:8501 consul:1.7 agent -dev -ui -client=0.0.0.0 -bind=0.0.0.0 --https-port=8501
+
+
+en Car
+mvn quarkus:add-extension -Dextension="quarkus-rest-client-reactive"
+
+En Shop, los demas que no sean reactive igual se debe cambiar. (jackson)
+mvn quarkus:add-extension -Dextension="quarkus-resteasy-reactive"
+
+En Ambos
+#mvn quarkus:add-extension -Dextension="stork-service-discovery-consul"
+#mvn quarkus:add-extension -Dextension="smallrye-mutiny-vertx-consul-client"
+
+<dependency>
+  <groupId>io.smallrye.stork</groupId>
+  <artifactId>stork-service-discovery-consul</artifactId>
+</dependency>
+<dependency>
+  <groupId>io.smallrye.reactive</groupId>
+  <artifactId>smallrye-mutiny-vertx-consul-client</artifactId>
+</dependency>
+
+
+docker run \
+    -d \
+    -p 8500:8500 \
+    -p 8600:8600/udp \
+    --name=badger \
+    consul agent -server -ui -node=server-1 -bootstrap-expect=1 -client=0.0.0.0
+
+docker run --name consul-co -d -p 8500:8500 -p 8501:8501/udp consul:1.7 agent -dev -ui -client=0.0.0.0 -bind=0.0.0.0 --https-port=8501
+
+

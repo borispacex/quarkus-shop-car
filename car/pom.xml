@@ -62,6 +62,18 @@
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>io.smallrye.stork</groupId>
+      <artifactId>stork-service-discovery-consul</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.smallrye.reactive</groupId>
+      <artifactId>smallrye-mutiny-vertx-consul-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-rest-client-reactive</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
