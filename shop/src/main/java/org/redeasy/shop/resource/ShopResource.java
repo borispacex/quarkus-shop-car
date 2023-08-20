@@ -77,7 +77,7 @@ public class ShopResource {
     // Metodo obtenido desde Car
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("{id}")
+    @Path("{id}/cars")
     public Response getCars(@PathParam("id") Long id) {
         List<Car> cars = carProxy.getCarsByShopId(id);
         return Response.ok(cars).build();
